@@ -1,0 +1,42 @@
+TALENTA WEB STUDIO — CLIENT PORTAL SETUP
+==========================================
+
+This package keeps one reusable client portal and one reusable admin page for every client.
+
+STEP 1 — SUPABASE (DO THIS FIRST)
+1. Open your Supabase project.
+2. Open SQL Editor, then click New query.
+3. Open talenta-portal-schema.sql from this package.
+4. Copy all its text into the Supabase query.
+5. Click Run. It should show Success.
+
+STEP 2 — GITHUB
+Upload or replace these files in the root of Joseph137981/Talentawebstudio:
+- index.html
+- talenta-admin.html
+- talenta-portal.html
+- talenta-config.js
+- talenta-logo.png
+
+You do not need to upload the SQL file to GitHub.
+
+STEP 3 — TEST THE ADMIN
+1. Wait for Vercel to finish deploying.
+2. Open: https://talenta-web-studio.vercel.app/talenta-admin.html
+3. Sign in with your existing Supabase admin account.
+4. Click “New client project.”
+5. Enter the accepted client's name, email, business, package, and target date.
+6. Copy the private invitation link created by the admin page.
+
+STEP 4 — SEND THE CLIENT INVITATION
+Send that private link to the client. The client must create an account with the exact same email you entered for the project.
+
+The first time, the client completes onboarding. After submission, the same page becomes their project dashboard. They can see progress, updates, requests, and invoices without using a separate onboarding page.
+
+PAYMENTS
+Create a Payment Link in Stripe Dashboard. In the admin project's Billing section, add the description, amount, due date, and Stripe Payment Link. The client will see a “Pay securely” button. Never paste a Stripe secret key into an HTML file.
+
+SECURITY
+- Each client can only see the project connected to their signed-in account.
+- An invitation only works when the client's signed-in email matches the email on the project.
+- Only the authorized admin role can manage all projects, progress, updates, requests, and invoices.
